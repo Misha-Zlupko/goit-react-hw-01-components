@@ -1,65 +1,76 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import css from './FriendList.module.css';
 
-export const Profile = (
+export const Profile = ({
   avatar,
   username,
   tag,
   location,
   followers,
   views,
-  likes
-) => {
+  likes,
+}) => {
   return (
-    <div className="profile">
-      <div className="description">
-        <img src={avatar} alt="User avatar" className="avatar" />
-        <p className="name">{username}</p>
-        <p className="tag">{tag}</p>
-        <p className="location">{location}</p>
+    <div className={css.profile}>
+      <div className={css.description}>
+        <img src={avatar} alt="User avatar" className={css.avatar} />
+        <p className={css.name}>{username}</p>
+        <p className={css.tag}>{tag}</p>
+        <p className={css.location}>{location}</p>
       </div>
 
-      <ul className="stats">
+      <ul className={css.stats}>
         <li>
-          <span className="label">Followers</span>
-          <span className="quantity">{followers}</span>
+          <span className={css.label}>Followers</span>
+          <span className={css.quantity}>{followers}</span>
         </li>
         <li>
-          <span className="label">Views</span>
-          <span className="quantity">{views}</span>
+          <span className={css.label}>Views</span>
+          <span className={css.quantity}>{views}</span>
         </li>
         <li>
-          <span className="label">Likes</span>
-          <span className="quantity">{likes}</span>
+          <span className={css.label}>Likes</span>
+          <span className={css.quantity}>{likes}</span>
         </li>
       </ul>
     </div>
   );
 };
 
+Profile.protoType = {
+  avatar: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  followers: PropTypes.number.isRequired,
+  views: PropTypes.number.isRequired,
+  likes: PropTypes.number.isRequired,
+};
+
 export const Statistics = ({ stats }) => {
   return (
-    <section className="statistics">
+    <section className={css.statistics}>
       {stats.map(stat => (
         <div>
-          <h2 className="title">Upload {stat.id}</h2>
+          <h2 className={css.title}>Upload {stat.id}</h2>
 
-          <ul className="stat-list">
-            <li className="item">
-              <span className="label">{stat.label}</span>
-              <span className="percentage">{stat.percentage}%</span>
+          <ul className={css.stat_list}>
+            <li className={css.item}>
+              <span className={css.label}>{stat.label}</span>
+              <span className={css.percentage}>{stat.percentage}%</span>
             </li>
-            <li className="item">
-              <span className="label">{stat.label}</span>
-              <span className="percentage">{stat.percentage}%</span>
+            <li className={css.item}>
+              <span className={css.label}>{stat.label}</span>
+              <span className={css.percentage}>{stat.percentage}%</span>
             </li>
-            <li className="item">
-              <span className="label">{stat.label}</span>
-              <span className="percentage">{stat.percentage}%</span>
+            <li className={css.item}>
+              <span className={css.label}>{stat.label}</span>
+              <span className={css.percentage}>{stat.percentage}%</span>
             </li>
-            <li className="item">
-              <span className="label">{stat.label}</span>
-              <span className="percentage">{stat.percentage}%</span>
+            <li className={css.item}>
+              <span className={css.label}>{stat.label}</span>
+              <span className={css.percentage}>{stat.percentage}%</span>
             </li>
           </ul>
         </div>
@@ -81,17 +92,17 @@ Statistics.propTypes = {
 export const FriendListItem = ({ status }) => {
   return (
     <div>
-      <ul class="friend-list">
+      <ul className="friend-list">
         {status.map(user => (
-          <li key={user.id} className="item">
-            <span className="status">{user.online}</span>
+          <li key={user.id} className={css.item}>
+            <span className={css.status}>{user.isOnline}</span>
             <img
               className="avatar"
               src={user.avatar}
               alt="User avatar"
               width="48"
             />
-            <p className="name">{user.name}</p>
+            <p className={css.name}>{user.name}</p>
           </li>
         ))}
       </ul>
@@ -114,29 +125,21 @@ export const TransactionHistory = ({ tables }) => {
   return (
     <div>
       {tables.map(tabl => (
-        <table className="transaction-history" key={tabl.id}>
+        <table className={css.transaction_history} key={tabl.id}>
           <thead>
             <tr>
-              <th>Type</th>
-              <th>Amount</th>
-              <th>Currency</th>
+              <th>{tabl.type}</th>
+              <th>{tabl.amount}</th>
+              <th>{tabl.currency}</th>
             </tr>
           </thead>
-
-          <tbody>
-            <tr>
-              <td>{tabl.type}</td>
-              <td>{tabl.amount}</td>
-              <td>{tabl.currency}</td>
-            </tr>
-          </tbody>
         </table>
       ))}
     </div>
   );
 };
 
-TransactionHistory.prototype = {
+TransactionHistory.protoTypes = {
   tables: PropTypes.arrayOf(
     PropTypes.exact({
       type: PropTypes.string.isRequired,
