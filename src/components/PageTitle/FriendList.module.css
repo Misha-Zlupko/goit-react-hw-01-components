@@ -67,5 +67,24 @@
   gap: 50px;
 }
 
+.status.true {
+  background-color: rgb(27, 168, 27);
+}
+.status.false {
+  background-color: rgb(245, 46, 46);
+}
 .status {
+  display: block;
+  width: 15px;
+  height: 15px;
+
+  border-radius: 50%;
+}
+
+.friend_list {
+}
+
+.item {
+  display: flex;
+  gap: 10px;
 }

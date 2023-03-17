@@ -92,10 +92,12 @@ Statistics.propTypes = {
 export const FriendListItem = ({ status }) => {
   return (
     <div>
-      <ul className="friend-list">
+      <ul className={css.friend_list}>
         {status.map(user => (
           <li key={user.id} className={css.item}>
-            <span className={css.status}>{user.isOnline}</span>
+            <span className={`${css.status} ${css[user.isOnline]}`}>
+              {user.isOnline}
+            </span>
             <img
               className="avatar"
               src={user.avatar}
