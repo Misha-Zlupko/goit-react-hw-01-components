@@ -94,7 +94,7 @@ export const FriendListItem = ({ status }) => {
     <div>
       <ul className={css.friend_list}>
         {status.map(user => (
-          <li key={user.id} className={css.item}>
+          <li key={user.id} className={css.items}>
             <span className={`${css.status} ${css[user.isOnline]}`}>
               {user.isOnline}
             </span>

@@ -2,62 +2,71 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 300px;
-  padding: 20px;
+  font-family: Arial, sans-serif;
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.description {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 20px;
 }
 
 .avatar {
-  width: 100px;
-  height: 100px;
-  margin-bottom: 10px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  object-fit: cover;
+  margin-bottom: 10px;
 }
 
 .name {
-  margin-bottom: 0;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .tag {
-  margin-top: 0;
-  color: gray;
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 5px;
 }
 
 .location {
-  margin-top: 0;
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
 }
 
 .stats {
   display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  width: 100%;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.stats li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+  padding: 10px;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.stats li:last-child {
+  margin-right: 0;
 }
 
 .label {
-  display: block;
-  text-align: center;
-  color: gray;
-  font-size: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .quantity {
-  display: block;
-  text-align: center;
-  font-size: 16px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #4385f5;
 }
 .stat_list {
 }
@@ -84,7 +93,87 @@
 .friend_list {
 }
 
-.item {
+.items {
   display: flex;
   gap: 10px;
+}
+.transaction_history {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.transaction_history th {
+  font-weight: 600;
+  text-align: left;
+  background-color: #f7f7f7;
+  border-top: 4px solid #333;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+.transaction_history td {
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+.transaction_history tr:nth-child(even) td {
+  background-color: #f7f7f7;
+}
+
+.transaction_history tr:last-child td {
+  border-bottom: none;
+}
+.statistics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f3f6f9;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1b1e28;
+}
+
+.stat_list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(27, 30, 40, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.item:hover {
+  box-shadow: 0px 0px 20px rgba(27, 30, 40, 0.2);
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1b1e28;
+}
+
+.percentage {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #4c4f5c;
 }
