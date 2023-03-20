@@ -5,22 +5,22 @@ import css from '../FriendList.module.css';
 export const TransactionHistory = ({ tables }) => {
   return (
     <div>
-      {tables.map(tabl => (
-        <table className={css.transaction_history} key={tabl.id}>
-          <tr>
-            <th>Type</th>
-            <th>Amount</th>
-            <th>Currency</th>
-          </tr>
-          <tbody>
+      <table className={css.transaction_history}>
+        <tr>
+          <th>Type</th>
+          <th>Amount</th>
+          <th>Currency</th>
+        </tr>
+        <tbody>
+          {tables.map(tabl => (
             <tr>
               <th>{tabl.type}</th>
               <th>{tabl.amount}</th>
               <th>{tabl.currency}</th>
             </tr>
-          </tbody>
-        </table>
-      ))}
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
